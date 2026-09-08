@@ -3,16 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="house.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>地域再生ミニ分譲プロジェクト</title>
+    <link rel="stylesheet" href="house.css">
 
+    <title>地域再生ミニ分譲プロジェクト</title>
 </head>
 
-
 <body>
-
 
     <header>
 
@@ -21,171 +19,209 @@
             地域再生プロジェクト
         </div>
 
-        <nav>
-            <a href="#concept">CONCEPT</a>
+        <!-- PC用ナビ / スマホではハンバーガーメニュー内に表示 -->
+        <nav class="global-nav">
+            <a href="#vision">VISION</a>
             <a href="#project">PROJECT</a>
             <a href="#contact">CONTACT</a>
         </nav>
 
+        <!-- スマホ用ハンバーガー -->
+        <button class="hamburger" type="button" aria-label="メニューを開く" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </header>
 
 
-    <!-- =====================
-     HERO
-===================== -->
+    <main>
 
-    <section class="hero">
+        <!-- =====================
+         HERO
+    ===================== -->
 
-        <div class="hero-content">
+        <section class="hero">
 
-            <div class="hero-label">
-                revitalize abandoned ruins
+            <div class="hero-content">
+
+                <div class="hero-label">
+                    revitalize abandoned ruins
+                </div>
+
+                <h1>
+                    負の遺産を、<br>
+                    地域の未来へ。
+                </h1>
+
+                <p class="hero-text">
+                    廃墟となった土地を、<br>
+                    新しい暮らしの場所へ。
+                </p>
+
             </div>
 
-            <h1>
-                負の遺産を、<br>
-                地域の未来へ。
-            </h1>
+            <a href="#vision" class="scroll" aria-label="ビジョンへスクロール">
+                SCROLL
+            </a>
 
-            <p class="hero-text">
-                廃墟となった土地を、<br>
-                新しい暮らしの場所へ。
+        </section>
+
+
+        <!-- =====================
+         INTRO
+    ===================== -->
+
+        <section class="intro" id="vision">
+
+            <div class="section-label">
+                VISION
+            </div>
+
+            <h2>
+                荒れた土地を、<br>
+                住みたくなる場所へ。
+            </h2>
+
+            <p>
+                新たに自然や農地を切り開くのではなく、
+                すでに地域の課題となっている土地を再生する。
+                小さな宅地分譲から、地域に新しい暮らしを生み出します。
             </p>
 
-        </div>
+        </section>
 
 
-        <a href="#concept" class="scroll" aria-label="コンセプトへスクロール">
-            SCROLL
-        </a>
-    </section>
+        <!-- =====================
+         PURPOSE
+    ===================== -->
 
+        <section class="purpose" id="project">
 
+            <div class="section-label">
+                PROJECT
+            </div>
 
-    <!-- =====================
-     INTRO
-===================== -->
+            <div class="purpose-grid">
 
-    <section class="intro" id="concept">
+                <div class="purpose-item">
 
-        <div class="section-label">
-            CONCEPT
-        </div>
+                    <div class="purpose-number">
+                        01 / ENVIRONMENT
+                    </div>
 
-        <h2>
-            荒れた土地を、<br>
-            住みたくなる場所へ。
-        </h2>
+                    <h3>
+                        環境の再生
+                    </h3>
 
-        <p>
-            新たに自然や農地を切り開くのではなく、
-            すでに地域の課題となっている土地を再生する。
-            小さな宅地分譲から、地域に新しい暮らしを生み出します。
-        </p>
+                    <p>
+                        廃墟や不法投棄など、
+                        地域の負の土地を綺麗に再生します。
+                    </p>
 
-    </section>
-
-
-
-    <!-- =====================
-     PURPOSE
-===================== -->
-
-    <section class="purpose" id="project">
-
-        <div class="section-label">
-            PROJECT
-        </div>
-
-
-        <div class="purpose-grid">
-
-            <div class="purpose-item">
-
-                <div class="purpose-number">
-                    01 / ENVIRONMENT
                 </div>
 
-                <h3>
-                    環境の再生
-                </h3>
 
-                <p>
-                    廃墟や不法投棄など、
-                    地域の負の土地を綺麗に再生します。
-                </p>
+                <div class="purpose-item">
+
+                    <div class="purpose-number">
+                        02 / MIGRATION
+                    </div>
+
+                    <h3>
+                        移住の実現
+                    </h3>
+
+                    <p>
+                        この地域に住みたい人が、
+                        実際に暮らせる場所をつくります。
+                    </p>
+
+                </div>
+
+
+                <div class="purpose-item">
+
+                    <div class="purpose-number">
+                        03 / SCHOOL
+                    </div>
+
+                    <h3>
+                        学校の存続
+                    </h3>
+
+                    <p>
+                        子育て世代を呼び込み、
+                        地域の学校と暮らしを支えます。
+                    </p>
+
+                </div>
 
             </div>
 
+        </section>
 
-            <div class="purpose-item">
 
-                <div class="purpose-number">
-                    02 / MIGRATION
-                </div>
+        <!-- =====================
+         CTA
+    ===================== -->
 
-                <h3>
-                    移住の実現
-                </h3>
+        <section class="cta" id="contact">
 
-                <p>
-                    この地域に住みたい人が、
-                    実際に暮らせる場所をつくります。
-                </p>
-
+            <div class="section-label">
+                CONTACT
             </div>
 
+            <h2>
+                小さな一歩から、<br>
+                地域の未来を。
+            </h2>
 
-            <div class="purpose-item">
+            <p>
+                この土地を活用できないか。<br>
+                一緒に可能性を考えてみませんか。
+            </p>
 
-                <div class="purpose-number">
-                    03 / SCHOOL
-                </div>
+            <a href="#" class="cta-button">
+                コンタクトを取る
+            </a>
 
-                <h3>
-                    学校の存続
-                </h3>
+        </section>
 
-                <p>
-                    子育て世代を呼び込み、
-                    地域の学校と暮らしを支えます。
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
+    </main>
 
 
     <!-- =====================
-     CTA
-===================== -->
+         FOOTER
+    ===================== -->
 
-    <section class="cta" id="contact">
+    <footer class="site-footer">
 
-        <div class="section-label">
-            CONTACT
+        <div class="footer-inner">
+
+            <div class="footer-logo">
+                <strong>Redeveloping ruins</strong>
+                地域再生プロジェクト
+            </div>
+
+            <nav class="footer-nav" aria-label="フッターナビゲーション">
+                <a href="#vision">VISION</a>
+                <a href="#project">PROJECT</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+
+            <div class="copyright">
+                &copy; Redeveloping ruins
+            </div>
+
         </div>
 
+    </footer>
 
-        <h2>
-            小さな一歩から、<br>
-            地域の未来を。
-        </h2>
 
-        <p>
-            この土地を活用できないか。<br>
-            一緒に可能性を考えてみませんか。
-        </p>
-
-        <a href="#" class="cta-button">
-            コンタクトを取る
-        </a>
-
-    </section>
-
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 

@@ -1,15 +1,13 @@
 @charset "UTF-8";
 
+/* =========================
+   共通
+========================= */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 html {
@@ -39,8 +37,9 @@ header {
 
     width: 100%;
     height: 90px;
+    background-color: rgba(20, 32, 25, 0.6);
 
-    z-index: 10;
+    z-index: 10000;
 
     display: flex;
     align-items: center;
@@ -63,23 +62,66 @@ header {
     letter-spacing: 0.08em;
 }
 
-nav {
+
+/* =========================
+   PCナビ
+========================= */
+
+.global-nav {
     display: flex;
     gap: 35px;
 }
 
-nav a {
+.global-nav a {
     color: white;
     text-decoration: none;
 
     font-size: 13px;
     letter-spacing: 0.08em;
 
-    transition: 0.3s;
+    transition: opacity 0.3s;
 }
 
-nav a:hover {
+.global-nav a:hover {
     opacity: 0.6;
+}
+
+
+/* =========================
+   ハンバーガー
+   ※PCでは非表示
+========================= */
+
+.hamburger {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 10px;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+    z-index: 10001;
+}
+
+.hamburger span {
+    display: block;
+
+    width: 24px;
+    height: 1px;
+
+    margin: 6px auto;
+
+    background: white;
+
+    transition:
+        transform 0.3s,
+        opacity 0.3s;
 }
 
 
@@ -89,6 +131,7 @@ nav a:hover {
 
 .hero {
     position: relative;
+
     height: 100vh;
     min-height: 700px;
 
@@ -113,7 +156,7 @@ nav a:hover {
             linear-gradient(to bottom,
                 rgba(10, 20, 14, 0.15),
                 rgba(10, 20, 14, 0.65)),
-            url("images/sp_main.jpg");
+            url("images/_sp.jpeg");
 
         background-size: cover;
         background-position: center;
@@ -121,8 +164,6 @@ nav a:hover {
 
 }
 
-
-/* HEROの文字 */
 
 .hero-content {
     position: absolute;
@@ -181,7 +222,22 @@ nav a:hover {
     letter-spacing: 0.2em;
 
     writing-mode: vertical-rl;
+
     z-index: 9999;
+
+    color: white;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
+}
+
+.scroll:hover {
+    opacity: 0.65;
+    transform: translateY(4px);
 }
 
 .scroll::after {
@@ -204,6 +260,7 @@ nav a:hover {
 
 .intro {
     padding: 140px 8%;
+
     text-align: center;
 }
 
@@ -244,15 +301,14 @@ nav a:hover {
 
 .purpose {
     padding: 0 8% 140px;
-    text-align: center;
 
+    text-align: center;
 }
 
 .purpose-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 2px;
 }
@@ -308,6 +364,10 @@ nav a:hover {
     text-align: center;
 }
 
+.cta .section-label {
+    color: rgba(255, 255, 255, 0.65);
+}
+
 .cta h2 {
     font-size: clamp(30px, 4vw, 52px);
 
@@ -342,7 +402,6 @@ nav a:hover {
 
 .cta-button:hover {
     background: white;
-
     color: #30483a;
 }
 
@@ -359,14 +418,77 @@ nav a:hover {
         padding: 0 6%;
     }
 
-    nav {
-        display: none;
+    /* PCナビをスマホでは右側から出す */
+    .global-nav {
+        display: flex;
+
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: min(78vw, 320px);
+        height: 100vh;
+
+        padding: 110px 40px 40px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 28px;
+
+        background: rgba(20, 32, 25, 0.96);
+
+        transform: translateX(100%);
+
+        transition: transform 0.35s ease;
+
+        z-index: 10000;
     }
+
+    .global-nav.is-open {
+        transform: translateX(0);
+    }
+
+    .global-nav a {
+        font-size: 16px;
+        letter-spacing: 0.12em;
+    }
+
+    /* ハンバーガー表示 */
+    .hamburger {
+        display: block;
+    }
+
+    /* ハンバーガー → × */
+    .hamburger.is-open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.is-open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.is-open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+
+    /* -------------------------
+       スマホ用ファーストビュー
+    ------------------------- */
 
     .hero {
         min-height: 650px;
 
-        background-position: 60% center;
+        background-image:
+            linear-gradient(to bottom,
+                rgba(10, 20, 14, 0.15),
+                rgba(10, 20, 14, 0.65)),
+            url("images/sp_main.jpg");
+
+        background-size: cover;
+        background-position: center;
     }
 
     .hero-content {
@@ -388,6 +510,7 @@ nav a:hover {
         line-height: 1.9;
     }
 
+    /* スマホではSCROLLを非表示 */
     .scroll {
         display: none;
     }
@@ -408,6 +531,80 @@ nav a:hover {
         min-height: auto;
 
         padding: 35px;
+    }
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    background: #202d25;
+    color: white;
+    padding: 55px 8% 30px;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo strong {
+    display: block;
+    font-size: 17px;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+}
+
+.footer-logo {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 30px;
+    margin-top: 28px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 0.6;
+}
+
+.copyright {
+    margin-top: 45px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    opacity: 0.65;
+}
+
+@media (max-width: 768px) {
+
+    .site-footer {
+        padding: 45px 7% 25px;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 25px;
+    }
+
+    .copyright {
+        margin-top: 35px;
     }
 
 }
