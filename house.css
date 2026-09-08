@@ -89,7 +89,6 @@ nav a:hover {
 
 .hero {
     position: relative;
-
     height: 100vh;
     min-height: 700px;
 
@@ -97,12 +96,29 @@ nav a:hover {
         linear-gradient(to bottom,
             rgba(10, 20, 14, 0.15),
             rgba(10, 20, 14, 0.65)),
-        url("images/3houseimg.jpeg");
+        url("images/pc_main.jpeg");
 
     background-size: cover;
     background-position: center;
 
     color: white;
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 650px;
+
+        background-image:
+            linear-gradient(to bottom,
+                rgba(10, 20, 14, 0.15),
+                rgba(10, 20, 14, 0.65)),
+            url("images/sp_main.jpg");
+
+        background-size: cover;
+        background-position: center;
+    }
+
 }
 
 
