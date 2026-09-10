@@ -410,4 +410,10 @@ nav a:hover {
         padding: 35px;
     }
 
+    #concept,
+    #project,
+    #contact {
+        scroll-margin-top: 30px;
+    }
+    
 }
