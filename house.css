@@ -414,8 +414,8 @@ header {
 
     header {
         height: 70px;
-
         padding: 0 6%;
+        backdrop-filter: none;
     }
 
     #concept,
