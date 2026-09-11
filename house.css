@@ -418,10 +418,14 @@ header {
         backdrop-filter: none;
     }
 
-    #concept,
-    #project,
-    #contact {
+
+    #project {
         scroll-margin-top: 30px;
+    }
+
+    #vision,
+    #contact {
+        scroll-margin-top: 10px;
     }
 
    
