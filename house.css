@@ -423,12 +423,7 @@ header {
         scroll-margin-top: 30px;
     }
 
-    #vision,
-    #contact {
-        scroll-margin-top: 10px;
-    }
-
-   
+ 
     /* PCナビをスマホでは右側から出す */
     .global-nav {
         display: flex;
