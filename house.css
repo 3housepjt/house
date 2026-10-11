@@ -931,43 +931,48 @@ header {
 
 @media (max-width: 768px) {
 
-    .vision {
-        min-height: 600px;
-    }
+    @media (max-width: 768px) {
 
-    .vision-background {
-        background-position: 58% center;
-    }
+        .vision {
+            min-height: 600px;
+        }
 
-    .vision-overlay {
-        background:
-            linear-gradient(0deg,
-                rgba(15, 25, 18, 0.75) 0%,
-                rgba(15, 25, 18, 0.35) 65%,
-                rgba(15, 25, 18, 0.15) 100%);
-    }
+        /* スマホ専用画像 */
+        .vision-background {
+            background-image: url("images/vision_sp.webp");
+            background-position: center;
+            background-size: cover;
+        }
 
-    .vision-content {
-        padding: 40px 7%;
-        margin-top: 50px;
-    }
+        .vision-overlay {
+            background:
+                linear-gradient(0deg,
+                    rgba(15, 25, 18, 0.75) 0%,
+                    rgba(15, 25, 18, 0.35) 65%,
+                    rgba(15, 25, 18, 0.15) 100%);
+        }
 
-    .vision-label {
-        margin-bottom: 25px;
-    }
+        .vision-content {
+            padding: 40px 7%;
+            margin-top: 50px;
+        }
 
-    .vision-content h2 {
-        font-size: clamp(36px, 9vw, 52px);
-        line-height: 1.6;
-    }
+        .vision-label {
+            margin-bottom: 25px;
+        }
 
-    .vision-description {
-        font-size: 13px;
-    }
+        .vision-content h2 {
+            font-size: clamp(36px, 9vw, 52px);
+            line-height: 1.6;
+        }
 
-    .vision-scroll {
-        right: 7%;
-        bottom: 25px;
-    }
+        .vision-description {
+            font-size: 13px;
+        }
 
-}
+        .vision-scroll {
+            right: 7%;
+            bottom: 25px;
+        }
+
+    }
