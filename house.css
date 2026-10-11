@@ -419,11 +419,9 @@ header {
     }
 
 
-    #project {
-        scroll-margin-top: 30px;
-    }
 
- 
+
+
     /* PCナビをスマホでは右側から出す */
     .global-nav {
         display: flex;
@@ -611,6 +609,365 @@ header {
 
     .copyright {
         margin-top: 35px;
+    }
+
+}
+
+/* =========================
+   PROBLEM STORY
+========================= */
+
+.problem-story {
+    position: relative;
+    background: #172019;
+    color: #fff;
+}
+
+/* 画面いっぱいの写真を固定 */
+.problem-visual {
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+
+    overflow: hidden;
+}
+
+/* 写真を重ねて配置 */
+.problem-image {
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+
+    transform: scale(1.06);
+
+    transition:
+        opacity 0.8s ease,
+        transform 5s ease;
+}
+
+.problem-image.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 写真の上に暗いグラデーション */
+.problem-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.25) 45%,
+            rgba(0, 0, 0, 0.7));
+
+    z-index: 1;
+}
+
+/* 写真番号 */
+.problem-counter {
+    position: absolute;
+    z-index: 2;
+
+    right: 6%;
+    bottom: 50px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 12px;
+    letter-spacing: 0.15em;
+}
+
+#problem-current {
+    font-size: 22px;
+}
+
+.counter-line {
+    width: 45px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* 文章を写真の上に重ねる */
+.problem-content {
+    position: relative;
+    z-index: 3;
+
+    margin-top: -100vh;
+    margin-top: -100svh;
+
+    pointer-events: none;
+}
+
+/* 1つの文章につき1画面分 */
+.problem-step {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 100px 10%;
+
+    opacity: 0.2;
+
+    transition: opacity 0.5s ease;
+}
+
+.problem-step.is-active {
+    opacity: 1;
+}
+
+.problem-label {
+    margin-bottom: 28px;
+
+    font-size: 12px;
+    letter-spacing: 0.2em;
+}
+
+.problem-step h2 {
+    margin-bottom: 28px;
+
+    font-size: clamp(38px, 6vw, 76px);
+
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+}
+
+.problem-step>p:last-child {
+    font-size: 15px;
+    line-height: 2;
+}
+
+/* スマートフォン */
+@media (max-width: 768px) {
+
+    .problem-step {
+        padding: 80px 7%;
+    }
+
+    .problem-step h2 {
+        font-size: clamp(32px, 8vw, 48px);
+    }
+
+    .problem-step>p:last-child {
+        font-size: 13px;
+    }
+
+    .problem-image {
+        background-position: center;
+    }
+
+    .problem-counter {
+        bottom: 30px;
+    }
+
+}
+
+/* =========================
+   VISION
+========================= */
+
+.vision {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    color: #fff;
+    background: #26352b;
+}
+
+/* 背景画像 */
+
+.vision-background {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("images/vision.webp");
+
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.05);
+
+    animation: visionZoom 12s ease-out forwards;
+}
+
+/* 画像をゆっくりズーム */
+
+@keyframes visionZoom {
+    from {
+        transform: scale(1.05);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* 文字を読みやすくする */
+
+.vision-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(90deg,
+            rgba(15, 25, 18, 0.72) 0%,
+            rgba(15, 25, 18, 0.42) 45%,
+            rgba(15, 25, 18, 0.08) 100%);
+}
+
+/* メインコンテンツ */
+
+.vision-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+    padding: 60px 8%;
+}
+
+.vision-label {
+    margin-bottom: 35px;
+
+    font-size: 12px;
+    letter-spacing: 0.3em;
+}
+
+.vision-content h2 {
+    margin: 0 0 30px;
+
+    font-size: clamp(42px, 6vw, 78px);
+
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+}
+
+.vision-description {
+    margin-bottom: 40px;
+
+    font-size: 15px;
+    line-height: 2.2;
+}
+
+/* PROJECTボタン */
+
+.vision-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 35px;
+
+    padding: 16px 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 0.15em;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.vision-button:hover {
+    background: #fff;
+    color: #26352b;
+}
+
+/* スクロール案内 */
+
+.vision-scroll {
+    position: absolute;
+    z-index: 2;
+
+    right: 5%;
+    bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 10px;
+    letter-spacing: 0.2em;
+}
+
+.vision-scroll-line {
+    display: block;
+
+    width: 55px;
+    height: 1px;
+
+    background: #fff;
+}
+
+/* スマートフォン */
+
+@media (max-width: 768px) {
+
+    .vision {
+        min-height: 600px;
+    }
+
+    .vision-background {
+        background-position: 58% center;
+    }
+
+    .vision-overlay {
+        background:
+            linear-gradient(0deg,
+                rgba(15, 25, 18, 0.75) 0%,
+                rgba(15, 25, 18, 0.35) 65%,
+                rgba(15, 25, 18, 0.15) 100%);
+    }
+
+    .vision-content {
+        padding: 40px 7%;
+        margin-top: 50px;
+    }
+
+    .vision-label {
+        margin-bottom: 25px;
+    }
+
+    .vision-content h2 {
+        font-size: clamp(36px, 9vw, 52px);
+        line-height: 1.6;
+    }
+
+    .vision-description {
+        font-size: 13px;
+    }
+
+    .vision-scroll {
+        right: 7%;
+        bottom: 25px;
     }
 
 }

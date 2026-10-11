@@ -20,3 +20,57 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+/* =========================
+   PROBLEM 写真切り替え
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const section = document.querySelector(".problem-story");
+
+    if (!section) return;
+
+    const images = section.querySelectorAll(".problem-image");
+    const steps = section.querySelectorAll(".problem-step");
+    const current = document.getElementById("problem-current");
+
+    function activateStep(index) {
+
+        images.forEach((image, i) => {
+            image.classList.toggle("active", i === index);
+        });
+
+        steps.forEach((step, i) => {
+            step.classList.toggle("is-active", i === index);
+        });
+
+        if (current) {
+            current.textContent =
+                String(index + 1).padStart(2, "0");
+        }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                const index = Number(entry.target.dataset.index);
+
+                activateStep(index);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.5
+    });
+
+    steps.forEach(step => observer.observe(step));
+
+    activateStep(0);
+
+});
